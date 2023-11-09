@@ -1,0 +1,10 @@
+gcc file_name.c -o file_name -fopenmp
+export OMP_NUM_THREADS=4
+./file_name
+
+#include <omp.h>
+# pragma omp parallel for private (tmp), firstprivate(), lastprivate()
+
+omp_get_thread_num();  线程号
+omp_get_num_threads(); 线程数
+double begin = omp_get_wtime();
